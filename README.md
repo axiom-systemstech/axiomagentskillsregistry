@@ -16,7 +16,7 @@
 
 ## 🚀 Demo
 
-[https://axiom-systemstech.github.io/axiom-agent-skills/](https://axiom-systemstech.github.io/axiom-agent-skills/)
+[https://axiom-systemstech.github.io/axiom-agent-skills/](https://axiom-systemstech.github.io/axiomagentskillsregistry/)
 
 ## 💰 Versión Enterprise
 
