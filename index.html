@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AXIOM AGENT-SKILLS REGISTRY | Marketplace de habilidades para IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/addons.css">
+</head>
+<body>
+<div class="blob1"></div><div class="blob2"></div>
+<header>
+    <div class="logo">AXIOM SYSTEMS</div>
+    <div class="controls-bar">
+        <button id="kioskBtn">🖥️ Modo Kiosco</button>
+        <button id="tourBtn">🎓 Tutorial</button>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+</header>
+<main>
+    <h1>🧠 AXIOM AGENT-SKILLS REGISTRY</h1>
+    <div class="subtitle">Orquestador de superpoderes para tus agentes de IA. Activa skills, ajusta parámetros, genera JSON listo para OpenAI/Claude.</div>
+
+    <div class="stats-bar">
+        <div class="stat-pill"><span id="activeCount">0</span> skills activas</div>
+        <div class="stat-pill"><span id="tokenEstimate">0</span> tokens estimados</div>
+        <div class="stat-pill">🎯 Formato: <span id="currentFormat">OpenAI</span></div>
+    </div>
+
+    <div class="toolbar">
+        <div class="search-filter">
+            <input type="text" id="searchInput" placeholder="🔍 Buscar skill..." style="width: 200px;">
+            <select id="categoryFilter">
+                <option value="all">Todas las categorías</option>
+                <option value="data">📊 Data</option>
+                <option value="web">🌐 Web</option>
+                <option value="security">🔒 Seguridad</option>
+                <option value="documents">📄 Documentos</option>
+                <option value="ia">🧠 IA</option>
+                <option value="utils">⚙️ Utilidades</option>
+            </select>
+            <select id="packSelector">
+                <option value="">📦 Skill packs</option>
+                <option value="developer">👨‍💻 Modo Developer</option>
+                <option value="data">📈 Modo Data Analyst</option>
+                <option value="social">📱 Modo Social Media</option>
+            </select>
+        </div>
+        <div class="view-toggle" id="viewToggle">
+            <button class="view-btn active" data-view="grid">📱 Grid</button>
+            <button class="view-btn" data-view="list">📋 Lista</button>
+        </div>
+    </div>
+
+    <div id="skillsContainer" class="skills-grid"></div>
+
+    <div id="recommendationBox" class="recommendation-box hidden">
+        <strong>🧠 Skill recomendador IA</strong>
+        <p id="recommendationText">Cargando recomendaciones...</p>
+    </div>
+
+    <div class="json-panel">
+        <div class="json-header">
+            <span><strong>📋 Configuración JSON para Tools</strong></span>
+            <div class="format-selector" id="formatSelector">
+                <button class="format-btn active" data-format="openai">OpenAI (functions)</button>
+                <button class="format-btn" data-format="claude">Claude (tools)</button>
+                <button class="format-btn" data-format="local">Local (unificado)</button>
+            </div>
+        </div>
+        <pre id="jsonOutput">{}</pre>
+        <div class="flex-row">
+            <button id="copyJsonBtn">📋 Copiar JSON</button>
+            <button id="exportJsonBtn">💾 Exportar JSON</button>
+            <button id="importJsonBtn">📂 Importar JSON</button>
+            <button id="shareConfigBtn">🔗 Compartir configuración</button>
+            <button id="saveTemplateBtn">⭐ Guardar como template</button>
+        </div>
+        <div class="flex-row">
+            <select id="loadTemplateSelect" style="width: auto;">
+                <option value="">📁 Cargar template guardado</option>
+            </select>
+            <button id="deleteTemplateBtn">🗑️ Eliminar template</button>
+        </div>
+    </div>
+
+    <div class="premium-locked">
+        <h3>🔒 AXIOM Agent-Skills Registry Enterprise</h3>
+        <p>¿Necesitas skills personalizadas, integración con tu infraestructura o motor en Rust? Contáctanos.</p>
+        <a href="https://axiom-systemstech.github.io/axiom-systems/" target="_blank" class="btn-premium">💼 Solicitar versión Enterprise →</a>
+    </div>
+</main>
+<footer>© 2026 AXIOM SYSTEMS · Configuración local · Tus datos no salen de tu navegador</footer>
+
+<script src="js/ui.js"></script>
+</body>
+</html>
